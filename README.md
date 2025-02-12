@@ -92,26 +92,106 @@ From the Azure Portal, restart Client-1
 
 <h2>Deploying Active Directory</h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/7b207554-ff36-4adb-bf46-06c3b451ba3e" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Login to DC-1 and install Active Directory Domain Services
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="598" alt="image" src="https://github.com/user-attachments/assets/706db11f-220c-42f9-8a7e-28b1560cc3d8" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Click on the triangle with the exclamation mark and
+Promote as a DC: Setup a new forest as mydomain.com
+
+For the password, put "password1"
+
+Restart and then log back into DC-1 as user: mydomain.com\labuser
+</p>
+<br />
+
+<p>
+<img width="565" alt="image" src="https://github.com/user-attachments/assets/8e46a28c-cc0f-4635-ba77-d05e70cf0b33" />
+<img width="560" alt="image" src="https://github.com/user-attachments/assets/d53db429-7582-4ce0-8344-5807d2c3aa2a" />
+</p>
+<p>
+In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES” and another one called "_ADMINS"
+</p>
+<br />
+
+<p>
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/80be55ba-6f1b-4606-be5b-064f815c50e7" />
+<img width="329" alt="image" src="https://github.com/user-attachments/assets/e8701659-0b95-4132-8985-ff16dfbec3be" />
+<img width="444" alt="image" src="https://github.com/user-attachments/assets/c4f0d313-e614-4a78-8016-3a43f503f514" />
+</p>
+<p>
+Create a new employee named “Jane Doe” (same password) with the username of “jane_admin” / Cyberlab123!
+
+Add jane_admin to the “Domain Admins” Security Group
+</p>
+<br />
+
+<p>
+<img width="537" alt="image" src="https://github.com/user-attachments/assets/0cef31ba-d769-4cf2-8dd6-13edc564819b" />
+</p>
+<p>
+Log out / close the connection to DC-1 and log back in as “mydomain.com\jane_admin”
+</p>
+<br />
+
+<p>
+<img width="574" alt="image" src="https://github.com/user-attachments/assets/c9185d2a-a88d-481b-8c59-69bc6fb4de03" />
+<img width="349" alt="image" src="https://github.com/user-attachments/assets/0e82ba43-7842-445a-a97a-4cbd6b183499" />
+</p>
+<p>
+Login to Client-1 as the original local admin (labuser) and join it to the domain
+
+Enter Jane and the password.
+</p>
+<br />
+
+<p>
+<img width="563" alt="image" src="https://github.com/user-attachments/assets/73b13e80-264e-4b38-a3c1-7d9c9e47a842" />
+<img width="475" alt="image" src="https://github.com/user-attachments/assets/7abff493-669f-4484-bf14-7a826e9363b9" />
+<img width="561" alt="image" src="https://github.com/user-attachments/assets/04332383-b7e4-4fa7-a382-7083bb31425d" />
+</p>
+<p>
+Login to the Domain Controller and verify Client-1 shows up in ADUC
+
+Create a new organizational unit called "_CLIENTS" and drag "client-1" in there
+</p>
+<br />
+
+<p>
+<img width="490" alt="image" src="https://github.com/user-attachments/assets/db1a80a7-054d-43b3-a041-6e9921dab841" />
+</p>
+<p>
+Log into Client-1 as mydomain.com\jane_admin
+
+Open system properties
+
+Click “Remote Desktop”
+
+Allow “domain users” access to remote desktop
+</p>
+<br />
+
+<h2>Creating Users In Powershell</h2>
+
+<p>
+<img width="615" alt="image" src="https://github.com/user-attachments/assets/a67eaefb-0249-48a9-80e3-aadfeeb2ae6c" />
+<img width="528" alt="image" src="https://github.com/user-attachments/assets/64c21faa-1f48-4859-be76-3f5863449689" />
+</p>
+<p>
+Login to DC-1 as jane_admin
+
+Open PowerShell_ise as an administrator
+
+Create a new File and paste the contents of the script into it
+
+Observe the accounts being created. When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES) and attempt to log into Client-1 with one of the accounts (take note of the password in the script)
 </p>
 <br />
 
