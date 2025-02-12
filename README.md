@@ -182,6 +182,7 @@ Allow “domain users” access to remote desktop
 <p>
 <img width="615" alt="image" src="https://github.com/user-attachments/assets/a67eaefb-0249-48a9-80e3-aadfeeb2ae6c" />
 <img width="528" alt="image" src="https://github.com/user-attachments/assets/64c21faa-1f48-4859-be76-3f5863449689" />
+<img width="535" alt="image" src="https://github.com/user-attachments/assets/088c3442-672b-48fe-8d6f-d6793fd28ed1" />
 </p>
 <p>
 Login to DC-1 as jane_admin
@@ -191,29 +192,5 @@ Open PowerShell_ise as an administrator
 Create a new File and paste the contents of the script into it
 
 Observe the accounts being created. When finished, open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES) and attempt to log into Client-1 with one of the accounts (take note of the password in the script)
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
